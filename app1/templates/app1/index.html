@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+        </head>
+<body>
+
+<h1>Flicks</h1>
+<table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Tags</th>
+      <th>Image desc</th>
+      <th>image</th>
+    </tr>
+    {% for f in flicks %}
+    <tr>
+      <td>{{f.title}}</td>
+      <td>{{f.description}}</td>
+      <td>{{f.tags}}</td>
+      <td>{{f.picture}}</td>
+      <td><img src="https://pics-324324.s3.us-east-2.amazonaws.com/{{f.picture}}" alt="image"></td>
+
+    </tr>
+    {% endfor %}
+  </table>
+  
+
+<h1>New Flick--</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+
+
+</body>
+</html>
