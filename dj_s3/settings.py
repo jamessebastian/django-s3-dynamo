@@ -86,6 +86,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djangae.db.backends.dynamodb',
+#         'NAME': os.getenv('DYNAMO_TABLE_NAME'),
+#         'AWS_ACCESS_KEY_ID': os.getenv('AWS_S3_ACCESS_KEY_ID'),
+#         'AWS_SECRET_ACCESS_KEY': os.getenv('AWS_S3_SECRET_ACCESS_KEY'),
+#         'AWS_REGION_NAME': os.getenv('AWS_REGION'),
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
