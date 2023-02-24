@@ -32,7 +32,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Tags</th>
-      <th>Image desc</th>
+      {% comment %} <th>Image desc</th> {% endcomment %}
       <th>image</th>
     </tr>
     {% for f in flicks %}
@@ -40,8 +40,8 @@
       <td>{{f.title}}</td>
       <td>{{f.description}}</td>
       <td>{{f.tags}}</td>
-      <td>{{f.picture}}</td>
-      <td><img src="https://pics-324324.s3.us-east-2.amazonaws.com/{{f.picture}}" alt="image" class="thumbnail"></td>
+      {% comment %} <td>{{f.picture}}</td> {% endcomment %}
+      <td><a href="https://pics-324324.s3.us-east-2.amazonaws.com/{{f.picture}}"><img src="https://pics-324324.s3.us-east-2.amazonaws.com/{{f.picture}}" alt="image" class="thumbnail"></a></td>
 
     </tr>
     {% endfor %}
