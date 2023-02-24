@@ -17,6 +17,11 @@
         tr:nth-child(even) {
           background-color: #dddddd;
         }
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            max-width: 100%;
+          }
         </style>
         </head>
 <body>
@@ -36,7 +41,7 @@
       <td>{{f.description}}</td>
       <td>{{f.tags}}</td>
       <td>{{f.picture}}</td>
-      <td><img src="https://pics-324324.s3.us-east-2.amazonaws.com/{{f.picture}}" alt="image"></td>
+      <td><img src="https://pics-324324.s3.us-east-2.amazonaws.com/{{f.picture}}" alt="image" class="thumbnail"></td>
 
     </tr>
     {% endfor %}
