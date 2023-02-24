@@ -29,6 +29,7 @@ def get_pics():
     table = dynamodb.Table('pics2')
     response = table.scan()
     items = response['Items']
+    #print(items)
     while 'LastEvaluatedKey' in response:
         response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
         items.extend(response['Items'])
@@ -49,7 +50,7 @@ def index(request):
     else:
         #flicks = Flick.objects.all()
         items = get_pics()
-        #print(items)
+        print(items)
         form = FlickForm()
     return render(request, 'app1/index.html', {'form': form,'flicks':items})
 
